@@ -20,11 +20,14 @@ router.post('/add', async (req, res) => {
     res.redirect('/cars/add');
   }
 });
-
 // Acción para listar autos
 router.get('/list', async (req, res) => {
   const cars = await Car.find();
   res.render('listCars', { cars });
+});
+
+router.get('*', (req, res) => {
+  res.redirect('/cars/list');
 });
 
 module.exports = router;

@@ -35,5 +35,8 @@ router.get('/list', async (req, res) => {
   const rents = await Rent.find();
   res.render('listRents', { rents });
 });
+router.get('*', (req, res) => {
+  res.redirect('/rents/list');
+});
 
 module.exports = router;
