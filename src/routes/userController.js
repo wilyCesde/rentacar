@@ -20,7 +20,7 @@ router.post('/login', async (req, res) => {
 
     // Aquí puedes agregar el manejo de sesiones y autenticación (por ejemplo, con Passport.js)
 
-    res.redirect('/cars'); // Redirige al usuario a la página de los carros después de iniciar sesión correctamente
+    res.redirect('/home'); // Redirige al usuario a la página de los carros después de iniciar sesión correctamente
   } catch (err) {
     console.log(err);
     res.redirect('/users/login');
