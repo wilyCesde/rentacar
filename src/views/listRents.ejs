@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Alquileres</title>
+</head>
+<body>
+  <h1>Lista de Alquileres</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Número de alquiler</th>
+        <th>Nombre de usuario</th>
+        <th>Placa</th>
+        <th>Fecha de alquiler</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% rents.forEach(rent => { %>
+        <tr>
+          <td><%= rent.rentnumber %></td>
+          <td><%= rent.username %></td>
+          <td><%= rent.platenumber %></td>
+          <td><%= rent.rentdate %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>

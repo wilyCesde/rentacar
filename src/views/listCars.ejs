@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Autos</title>
+</head>
+<body>
+  <h1>Lista de Autos</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Placa</th>
+        <th>Marca</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% cars.forEach(car => { %>
+        <tr>
+          <td><%= car.platenumber %></td>
+          <td><%= car.brand %></td>
+          <td><%= car.state %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>
