@@ -6,6 +6,25 @@
   <title>Lista de Alquileres</title>
 </head>
 <body>
+
+  <h1>Agregar Alquiler</h1>
+  <form action="/rents/add" method="post">
+    <label for="rentnumber">Número de alquiler:</label>
+    <input type="text" id="rentnumber" name="rentnumber" required>
+    <br>
+    <label for="username">Nombre de usuario:</label>
+    <input type="text" id="username" name="username" required>
+    <br>
+    <label for="platenumber">Placa:</label>
+    <input type="text" id="platenumber" name="platenumber" required>
+    <br>
+    <label for="rentdate">Fecha de alquiler:</label>
+    <input type="date" id="rentdate" name="rentdate" required>
+    <br>
+    <button type="submit">Agregar Alquiler</button>
+  </form>
+
+
   <h1>Lista de Alquileres</h1>
   <table>
     <thead>
