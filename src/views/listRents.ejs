@@ -1,50 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lista de Alquileres</title>
+  <!-- Agregar enlaces a los estilos de Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
+
 <body>
-  <button type="button" onclick="window.location.href='/cars/list'">Ver Lista de carros</button>
-  <h1>Agregar Alquiler</h1>
-  <form action="/rents/add" method="post">
-    <label for="rentnumber">Número de alquiler:</label>
-    <input type="text" id="rentnumber" name="rentnumber" required>
-    <br>
-    <label for="username">Nombre de usuario:</label>
-    <input type="text" id="username" name="username" required>
-    <br>
-    <label for="platenumber">Placa:</label>
-    <input type="text" id="platenumber" name="platenumber" required>
-    <br>
-    <label for="rentdate">Fecha de alquiler:</label>
-    <input type="date" id="rentdate" name="rentdate" required>
-    <br>
-    <button type="submit">Agregar Alquiler</button>
-  </form>
+  <div class="container">
 
+    <button type="button" class="btn btn-primary mb-3" onclick="window.location.href='/cars/list'">Ver Lista de
+      carros</button>
 
-  <h1>Lista de Alquileres</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Número de alquiler</th>
-        <th>Nombre de usuario</th>
-        <th>Placa</th>
-        <th>Fecha de alquiler</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% rents.forEach(rent => { %>
+    <h1>Agregar Alquiler</h1>
+    <form action="/rents/add" method="post">
+      <div class="form-group">
+        <label for="rentnumber">Número de alquiler:</label>
+        <input type="text" class="form-control" id="rentnumber" name="rentnumber" required>
+      </div>
+      <div class="form-group">
+        <label for="username">Nombre de usuario:</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="platenumber">Placa:</label>
+        <input type="text" class="form-control" id="platenumber" name="platenumber" required>
+      </div>
+      <div class="form-group">
+        <label for="rentdate">Fecha de alquiler:</label>
+        <input type="date" class="form-control" id="rentdate" name="rentdate" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Agregar Alquiler</button>
+    </form>
+
+    <h1>Lista de Alquileres</h1>
+    <table class="table">
+      <thead class="thead-dark">
         <tr>
-          <td><%= rent.rentnumber %></td>
-          <td><%= rent.username %></td>
-          <td><%= rent.platenumber %></td>
-          <td><%= rent.rentdate %></td>
+          <th>Número de alquiler</th>
+          <th>Nombre de usuario</th>
+          <th>Placa</th>
+          <th>Fecha de alquiler</th>
         </tr>
-      <% }); %>
-    </tbody>
-  </table>
-</body>
-</html>
+      </thead>
+      <tbody>
+        <% rents.forEach(rent=> { %>
+          <tr>
+            <td>
+              <%= rent.rentnumber %>
+            </td>
+            <td>
+              <%= rent.username %>
+            </td>
+            <td>
+              <%= rent.platenumber %>
+            </td>
+            <td>
+              <%= rent.rentdate %>
+            </td>
+          </tr>
+          <% }); %>
+      </tbody>
+    </table>
+  </div>
+  <!-- Agregar script para la funcionalidad de Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/XDp1ElBUkLegwb" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="
