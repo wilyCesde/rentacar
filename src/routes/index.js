@@ -19,14 +19,14 @@ router.get('/home', (req, res) => {
   res.render('home');
 });
 
-router.post('/login', async (req, res) => {
+/* router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
   try {
     const user = await User.findOne({ username });
 
     if (!user || user.password !== password) {
-      return res.status(400).send('El nombre de usuario o la contraseña son incorrectos');
+      return alert('El nombre de usuario o la contraseña son incorrectos');
     }
 
     // Aquí puedes agregar el manejo de sesiones y autenticación (por ejemplo, con Passport.js)
@@ -36,7 +36,7 @@ router.post('/login', async (req, res) => {
     console.log(err);
     res.redirect('/users/login');
   }
-});
+}); */
 
 
 
